@@ -1,0 +1,101 @@
+Stylometric Obfuscation on training data:
+I applied stylometric obfuscation on training data to reduce the author specific and linguistic cues while preserving the semantic meaning.
+
+Metadata masking
+Number normalization
+Number normalization
+Contraction expansion
+Filler word removal
+Controlled synonym substitution
+Controlled synonym substitution
+Original + obfuscated training data
+
+I tried with different strategies, and the following are the results:
+
+1: Trained on normal training data and tested on the normal validation data: 
+
+results:
+
+{
+  "eval_loss": 0.09266347438097,
+  "eval_roc_auc": 0.9990028532487205,
+  "eval_brier": 0.9885822515934706,
+  "eval_c@1": 0.9885762050710505,
+  "eval_f1": 0.9911884805501827,
+  "eval_f05u": 0.9874957177115452,
+  "eval_mean": 0.9909691016349939,
+  "eval_tn": 1242,
+  "eval_fp": 35,
+  "eval_fn": 6,
+  "eval_tp": 2306,
+  "eval_runtime": 5.3667,
+  "eval_samples_per_second": 668.753,
+  "eval_steps_per_second": 83.664,
+  "epoch": 4.0
+}
+
+2: Trained on obfuscated data and tested on the normal validation data:
+
+results:
+
+{
+  "eval_loss": 0.10683495551347733,
+  "eval_roc_auc": 0.9989376525864848,
+  "eval_brier": 0.9845430189743638,
+  "eval_c@1": 0.984118138757314,
+  "eval_f1": 0.9877761098005576,
+  "eval_f05u": 0.9828439740525777,
+  "eval_mean": 0.9876437788342596,
+  "eval_tn": 1229,
+  "eval_fp": 48,
+  "eval_fn": 9,
+  "eval_tp": 2303,
+  "eval_runtime": 5.2175,
+  "eval_samples_per_second": 687.874,
+  "eval_steps_per_second": 86.056,
+  "epoch": 3.0
+}
+
+3: Trained on mixed obfuscated data and training data and tested on the normal validation data:
+
+results:
+
+{
+  "eval_loss": 0.051337722688913345,
+  "eval_roc_auc": 0.9994199681346582,
+  "eval_brier": 0.9947080742567778,
+  "eval_c@1": 0.994706046252438,
+  "eval_f1": 0.9958963282937365,
+  "eval_f05u": 0.9951225828729282,
+  "eval_mean": 0.9959705999621077,
+  "eval_tn": 2529,
+  "eval_fp": 25,
+  "eval_fn": 13,
+  "eval_tp": 4611,
+  "eval_runtime": 10.463,
+  "eval_samples_per_second": 686.037,
+  "eval_steps_per_second": 85.826,
+  "epoch": 5.0
+}
+
+4: Trained on mixed obfuscated data and training data and tested on the obfuscated validation data:
+
+results:
+
+{
+  "eval_loss": 0.04681309312582016,
+  "eval_roc_auc": 0.9994279276960221,
+  "eval_brier": 0.9952661339193583,
+  "eval_c@1": 0.995263304541655,
+  "eval_f1": 0.9963227341553104,
+  "eval_f05u": 0.9964520595361716,
+  "eval_mean": 0.9965464319697034,
+  "eval_tn": 1269,
+  "eval_fp": 8,
+  "eval_fn": 9,
+  "eval_tp": 2303,
+  "eval_runtime": 5.294,
+  "eval_samples_per_second": 677.938,
+  "eval_steps_per_second": 84.813,
+  "epoch": 5.0
+}

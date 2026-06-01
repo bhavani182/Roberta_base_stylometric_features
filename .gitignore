@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+data/
+obfuscated_data/
+
+.ipynb_checkpoints/
+
+.env
+.DS_Store
